@@ -17,7 +17,7 @@ public class Ejercicio13 {
         // int(entero).
         int[] a = new int[n];
 
-        // Llenar el arreglo con números aleatoios entre 0(mínimo) y 50(Máximo).
+        // Llenar el arreglo con números aleatorios entre 0(mínimo) y 50(Máximo).
         for (int i = 0; i < a.length; i++) {
             a[i] = (int) (Math.random() * (50 - 0)) + 0;
             System.out.print(a[i] + " ");

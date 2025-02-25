@@ -6,7 +6,8 @@ public class Variables {
         //Tipos de datos
             //Enteros = int(Datos cortos) y long(Datos Extensos)
         int edad = 25;
-            //Reales = float (Almacena rangos de valores pequeños), double(Almacena rangos de valores mas grandes) 
+            //Reales = float (Almacena rangos de valores pequeños), double(Almacena rangos 
+            //de valores mas grandes) 
         double altura = 1.75;
             //Cadenas
         String nombre = "Juan";
