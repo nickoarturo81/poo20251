@@ -57,7 +57,7 @@ public class Ejercicio8 {
     
 
         // Mostrar numero mayor, menor y cantidad de que se repiten
-        system.out.print("El número mayor es: " + numMayor + " y se repite: " + numRepet1 + " veces");
+        System.out.print("El número mayor es: " + numMayor + " y se repite: " + numRepet1 + " veces");
         System.out.println();
         System.out.print("El número menor es: " + numMenor + " y se repite: " + numRepet2 + " veces");
         System.out.println();
