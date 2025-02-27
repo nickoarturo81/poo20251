@@ -34,7 +34,7 @@ public class Ejercicio8 {
             }
             
         }
-
+        //Identificar Valor Menor
         for (int i = 0; i < a.length; i++) {
             if (a[i] < numMenor) { 
                 numMenor = a[i]; 
