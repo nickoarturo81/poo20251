@@ -9,11 +9,16 @@ public class Ejericicio11 {
 
         // Creación del arreglo A
         int[] a = { 2, 17, -2, 26, 0, 5, -25, 23, -12, 33, -14, 32, -40  };
+        for (int i = 0; i < a.length; i++) {
+            System.out.print(a[i] + " | "); // --> Imprime el arreglo
+        }
+        System.out.println(); //--> Salto de Página
+
 
         // Iniciar el conteo
-        int contadorPos = 0;                // --> Suma la cantidad de números positivos
-        int contadorNeg = 0;                // --> Suma la cantidad de números negativos
-        int contadorCero = 0;               // --> Suma la cantidad de ceros
+        int contadorPos = 0;                // --> Suma la cantidad de números positivos para posteriormente dar tamaño al arreglo
+        int contadorNeg = 0;                // --> Suma la cantidad de números negativos para posteriormente dar tamaño al arreglo
+        int contadorCero = 0;               // --> Suma la cantidad de ceros para posteriormente dar tamaño al arreglo
 
         // Identificar Positivos, Negativos, Cero
         for (int i = 0; i < a.length; i++) {
@@ -26,7 +31,7 @@ public class Ejericicio11 {
             }
         }
 
-        // Creación de los arreglos que almacenarán los números positivos, negativos y cero
+        // Ahora que sabemos el tamaño, creación de los arreglos que almacenarán los números positivos, negativos y cero
         int[] pos = new int[contadorPos];                           
         int[] neg = new int[contadorNeg];
         int[] cero = new int[contadorCero];
