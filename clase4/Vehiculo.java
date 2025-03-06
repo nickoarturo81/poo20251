@@ -17,6 +17,7 @@ public class Vehiculo {
      * nombre de la clase
      */
 
+    //Metodos constructores:
     public Vehiculo(String marca, String color, double cilindraje, String chasis, double peso, String potencia) {
         this.marca = marca;
         this.color = color;
@@ -26,7 +27,7 @@ public class Vehiculo {
         this.potencia = potencia;
     }
 
-    // Métodos getter (retorna) / setter (no retorna)
+    // Métodos getter (retorna) / setter (no retorna) -> Pueden ir despues de los metodos constructores
     public String getMarca() {
         return marca;
     }
