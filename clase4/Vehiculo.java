@@ -12,8 +12,8 @@ public class Vehiculo {
 
     //*****NO SE PONE EN LA CLASE
     /*
-     * Constucor de la clase -> permite inicializar el objeto.
-     * El constructor de la clae se reconoce porque iene el mismo
+     * Constuctor de la clase -> permite inicializar el objeto.
+     * El constructor de la clase se reconoce porque tiene el mismo
      * nombre de la clase
      */
 
@@ -35,7 +35,7 @@ public class Vehiculo {
         this.marca = marca;
     }
 
-    //Pemite mosrar el objeto
+    //Pemite mostrar el objeto
     public String toString() {
         return "VEHICULO { Marca: " + marca + " Color: " + color + " Cilindraje: " + cilindraje + " Chasis: " + chasis
                 + " Peso: " + " Potencia: " + potencia + "}";
