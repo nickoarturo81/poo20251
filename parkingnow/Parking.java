@@ -1,5 +1,7 @@
 package parkingnow;
+
 import java.util.Scanner;
+
 public class Parking {
 
     public static void main(String[] args) {
@@ -27,26 +29,28 @@ public class Parking {
                 case 1:
                     System.out.print("*** REGISTRAR ENTRADA ***");
                     System.out.println();
+                    System.out.print("Registrar PLACA: ");
+                    String placa = leer.next();
+                    leer.nextLine();
                     System.out.print("Registrar CILINDRAJE: ");
-                    String placa = leer.nextLine();
+                    int cilindraje = leer.nextInt();
+                    leer.nextLine();
 
-                    int posicion
+                    int posicion;
+                    
                     if (cilindraje <= 400){
-                        System.out.println("Elija la posición (0-20): ")
-                        posicion = Leer.nextInt();
-                    if (posicion >= 0 && posicion < 20 && a[posicion].equals(" ")){
+                        System.out.println("Elija la posición (0-19): ");
+                        posicion = leer.nextInt();
+                    if (posicion >= 0 && posicion < 20 && a[posicion] == null){
                         a[posicion] = placa;
-                        System.out.println("Placa registrada en posicion " + posicion + " del arreglo a.");
+                        System.out.println("Motocicleta con placa " + placa + " registrada en posicion " + posicion);
                     }else {
                         System.out.println("Ocupado");
                     }
-                    }
-            }
-                    leer.nextLine();
-                    System.out.println();
-                    System.out.print("Registrar PLACA: "); 
-                    String cilindraje = leer.nextLine();
-                    break;
+                }
+                leer.nextLine();
+                System.out.println();
+                break;
 
                 case 2:
                     System.out.print("*** REGISTRAR SALIDA ***");
@@ -56,17 +60,20 @@ public class Parking {
                     leer.nextLine();
                     System.out.println();
                     System.out.print("Registrar TIEMPO: ");
-                    String tiempo = leer.nextLine();
-                    if (tiempo>30){
+                    int tiempo = leer.nextInt();
+                    
+                    if (tiempo<=30){
                          System.out.print( "Valor a pagar: $0 ");
-                    } else 
-                     System.out.print( " Valor a pagar es:" + tiempo + );
-                    } else 
-                    break;
+                    } else if (tiempo >30 && tiempo <=60){
+                        System.out.print( " Valor a pagar es: $800");
+                    } else {
+                        System.out.println("Valor a pagar es: $2000");
+                    }
+                break;    
+            } 
+                    
             
 
-        } while (opc != 4);
-    }    
+        } while (opc != 3);
+    }
 }
-        
-    
