@@ -26,6 +26,7 @@ public class Parking {
             opc = leer.nextInt();
 
             switch (opc) {
+                //Dar entrada a la motocicleta
                 case 1:
                     System.out.print("*** REGISTRAR ENTRADA ***");
                     System.out.println();
@@ -42,6 +43,7 @@ public class Parking {
                         mostrarPosiciones(a,"menor de 400cc");
                         boolean posicionCorrecta = false;
                         while (!posicionCorrecta) {
+                            System.out.println();
                             System.out.println("Elija la posición (P) de 0-19: ");
                             posicion = leer.nextInt();
                             
@@ -61,22 +63,24 @@ public class Parking {
                         mostrarPosiciones(b,"mayor de 400cc");
                         boolean posicionCorrecta = false;
                         while (!posicionCorrecta) {
+                            System.out.println();
                             System.out.println("Elija la posición(P) de 0-9: ");
                             posicion = leer.nextInt();
                             if (posicion >= 0 && posicion < 9 && b[posicion] == null) {
                             b[posicion] = placa;
                             System.out.println("Motocicleta con placa " + placa + " registrada en posicion " + posicion);
+                            posicionCorrecta = true;
                             } else if (posicion >= 10) {
                             System.out.println("No existe posición, debe ser de 0 a 9");
                             } else {
-                            System.out.println("Ocupado");
+                            System.out.println("No disponible");
                             }
                         } 
                     }
                     leer.nextLine();
                     System.out.println();
-                    break;
-
+                break;
+                //Dar salida a la motocicleta
                 case 2:
                     System.out.print("*** REGISTRAR SALIDA ***");
                     System.out.println();
@@ -111,14 +115,14 @@ public class Parking {
                         System.out.print("Registrar TIEMPO: ");
                         int tiempo = leer.nextInt();
                         if (tiempo <= 30) {
+                            System.out.println();
                             System.out.print("La moto con placa: " + placa1 + " ubicado en la posición: " + posicionPlaca + " tiene un valor a pagar: $0 ");
-                            System.out.println();
                         } else if (tiempo > 30 && tiempo <= 60) {
+                            System.out.println();
                             System.out.print("La moto con placa: " + placa1 + " ubicado en la posición: " + posicionPlaca + " tiene un valor a pagar: $800 ");
-                            System.out.println();
                         } else if (tiempo > 60) {
-                            System.out.println("La moto con placa: " + placa1 + " ubicado en la posición: " + posicionPlaca + " tiene un valor a pagar: $2000 ");
                             System.out.println();
+                            System.out.println("La moto con placa: " + placa1 + " ubicado en la posición: " + posicionPlaca + " tiene un valor a pagar: $2000 ");
                         }
 
                         // Liberar posición al dar salida moto
@@ -127,16 +131,17 @@ public class Parking {
                         } else if (cilindrajeMoto.equals("mayor de 400cc")) {
                             b[posicionPlaca] = null;
                         }
-                        System.out.println("La posición" + posicionPlaca + " ha sido liberado");
+                        System.out.println("La posición " + posicionPlaca + " ha sido liberado");
 
                     } else {
-                        System.out.println("La placa" + placa1 + " no ha sido registrada");
+                        System.out.println("La placa " + placa1 + " no ha sido registrada");
                     }
-                    break;
+                break;
+                //Salir del sistema
                 case 3:
                     System.out.println("Saliendo del sistema");
                 break;
-
+                //En caso de registrar una opción distinta a 1, 2 y 3
                 default:
                     System.out.println("ERROR: Debe seleccionar una de las 3 opciones");
                 break;
@@ -152,7 +157,6 @@ public class Parking {
             }else{
                 System.out.print("P" + i + ":" + "["+arreglo[i]+"] ");
             }
-        } 
-        System.out.println();
+        }
     }
 }
