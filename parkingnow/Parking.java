@@ -133,9 +133,15 @@ public class Parking {
                         System.out.println("La placa" + placa1 + " no ha sido registrada");
                     }
                     break;
-                case 3: 
+                case 3:
+                    System.out.println("Saliendo del sistema");
+                break;
+
+                default:
+                    System.out.println("ERROR: Debe seleccionar una de las 3 opciones");
+                break;
             }
-        } while (opc != 4);//do while
+        } while (opc != 3);
     }
     //Mostrar posiciones disponibles (Se usa un metodo)
     public static void mostrarPosiciones(String[] arreglo, String tipo) {
