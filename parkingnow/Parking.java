@@ -47,7 +47,7 @@ public class Parking {
                             System.out.println("Elija la posición (P) de 0-19: ");
                             posicion = leer.nextInt();
                             
-                            if (posicion >= 0 && posicion < 20 && a[posicion] == null) {
+                            if (posicion >= 0 && posicion <=20 && a[posicion] == null) {
                                 a[posicion] = placa;
                                 System.out.println("Motocicleta con placa " + placa + " registrada en posicion " + posicion);
                                 posicionCorrecta = true;
@@ -66,7 +66,7 @@ public class Parking {
                             System.out.println();
                             System.out.println("Elija la posición(P) de 0-9: ");
                             posicion = leer.nextInt();
-                            if (posicion >= 0 && posicion < 9 && b[posicion] == null) {
+                            if (posicion >= 0 && posicion <=9 && b[posicion] == null) {
                             b[posicion] = placa;
                             System.out.println("Motocicleta con placa " + placa + " registrada en posicion " + posicion);
                             posicionCorrecta = true;
