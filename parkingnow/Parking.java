@@ -96,7 +96,6 @@ public class Parking {
                             encontrado = true;
                             posicionPlaca = i;
                             cilindrajeMoto = "menor de 400cc";
-                            break;
                         }
                     }
                     // buscar placa mayores a 400cc
@@ -106,7 +105,6 @@ public class Parking {
                                 encontrado = true;
                                 posicionPlaca = i;
                                 cilindrajeMoto = "mayor de 400cc";
-                                break;
                             }
                         }
                     }
