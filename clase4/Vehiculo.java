@@ -27,7 +27,7 @@ public class Vehiculo {
         this.potencia = potencia;
     }
 
-    // Métodos getter (retorna) / setter (no retorna) -> Pueden ir despues de los metodos constructores
+    // Métodos getter (retorna) / setter (no retorna) -> Pueden ir despues de los metodos constructores. Solo para atributos
     public String getMarca() {
         return marca;
     }
