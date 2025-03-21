@@ -3,12 +3,18 @@ package clase7;
 public class EjecutarHerencia {
     
     public static void main(String[] args) {
-        
-        //Creación de los Objetos (Instanciar)
-        Trabajador objT1 = new Operario(1, "Pepito", "Puertas", 135.0);
-        Trabajador objT2 = new Consultor(2, "Juan", "Islas", 10);
 
-        System.out.println(objT1);
-        System.out.println(objT2);
+        //Arreglo de trabajadores
+        Trabajador[] t = new Trabajador[2];
+
+        //Creación de los Objetos (Instanciar)
+        t[0] = new Operario(1, "Pepito", "Puertas", 135.0);
+        t[1] = new Consultor(2, "Juan", "Islas", 10);
+        t[2] = new Consultor(3, "Byron", "Cano", 20);
+
+        for (Trabajador x : t) {
+            System.out.println(x.getClass() + " - " + x.pagar());
+        }
+        
     }
 }
