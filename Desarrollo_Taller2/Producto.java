@@ -1,7 +1,17 @@
 package Desarrollo_Taller2;
 
 public class Producto {
+
     //Atributos
     private int numero;
-    //Metodo
+
+    //Constructor
+    public Producto (int numero){
+        this.numero = numero;
+    }
+
+    //Métodos
+    public int getNumero(){
+        return numero;
+    }
 }

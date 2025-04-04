@@ -5,8 +5,17 @@ public class Cliente {
     private String cedula;
     private String nombre;
 
+    //Construtor
+    public Cliente (String cedula, String nombre){
+        this.cedula = cedula;
+        this.nombre = nombre;
+    }
     //Metodos
-    
-
+    public String getCedula(){
+        return cedula;
+    }
+    public String getNombre(){
+        return nombre;
+    }
 
 }

@@ -4,9 +4,29 @@ public class Pedido {
     
     //Atributos
     private Cliente cliente;
-    private Producto[] pedido;
+    private Producto[] producto;
     private Date fecha;
     private int numeroTarjetaCredito;
 
-    //Metodos
+    //Constructor
+    public Pedido(Cliente cliente, Producto[] producto, Date fecha, int numeroTarjetaCredito){
+        this.cliente = cliente;
+        this.producto = producto;
+        this.fecha = fecha;
+        this.numeroTarjetaCredito = numeroTarjetaCredito;
+    }
+    
+    //Métodos
+    public Cliente getCliente(){
+        return cliente;
+    }
+    public Producto[] getProducto(){
+        return producto;
+    }
+    public Date getFecha(){
+        return fecha;
+    }
+    public int getnumeroTarjetaCredito(){
+        return numeroTarjetaCredito;
+    }
 }
