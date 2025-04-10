@@ -24,6 +24,6 @@ public class Impresion extends Producto { // --> extends = hereda
     }
 
     public String toString(){
-        return "IMPRESION: COLOR: "+ color + " " + Arrays.toString(foto);
+        return "IMPRESION:\nID:" + super.getNumero() + " COLOR:" + color + " " + Arrays.toString(foto);
     }
 }

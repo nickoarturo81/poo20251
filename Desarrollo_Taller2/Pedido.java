@@ -31,6 +31,7 @@ public class Pedido {
     }
 
     public String toString(){
-        return "PEDIDO: DATOS_CLIENTE: " + cliente + " PRODUCTO: " + Arrays.toString(producto) + " FECHA: " + fecha + " NUM_TARJETA_CREDITO: " + numeroTarjetaCredito;
+        return "*** PEDIDO ***\n" +
+                "[DATOS_CLIENTE:] " + cliente + Arrays.toString(producto) + "\nFECHA_COMPRA: " + fecha + "\nNUM_TARJETA_CREDITO: " + numeroTarjetaCredito;
     }
 }

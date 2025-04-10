@@ -15,11 +15,11 @@ public class EjecutarTaller2 {
         Producto[] p = new Producto[1];
         p[0] = new Producto(1);
 
-        Impresion objImpresion1 = new Impresion(" B/N ", f, 0);
+        Impresion objImpresion1 = new Impresion(" B/N ", f, 1);
         Date fechaActual = new Date();
         Pedido objPedido1 = new Pedido(objCliente1, p, fechaActual, 623417546);
 
-        Camara objCamara1 = new Camara("sony", "Alpha APS", 1);
+        Camara objCamara1 = new Camara("Sony", "Alpha APS", 1);
 
 
         System.out.println(objPedido1);

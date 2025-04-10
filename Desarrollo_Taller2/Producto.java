@@ -16,6 +16,6 @@ public class Producto {
     }
 
     public String toString() {
-        return ("PRODUCTO: NUMERO: " + numero);
+        return ("\nPRODUCTO: NUMERO: " + numero);
     }
 }
