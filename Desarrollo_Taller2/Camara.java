@@ -22,6 +22,6 @@ public class Camara extends Producto { //extends = hereda
     }
 
     public String toString(){
-        return "CAMARA:\nID: " + super.getNumero() + " MARCA:  " + marca + "  MODELO:  " + modelo;
+        return "[CAMARA]\nID: " + super.getNumero() + " MARCA:  " + marca + "  MODELO:  " + modelo;
     }
 }

@@ -19,6 +19,6 @@ public class Cliente {
     }
     
     public String toString(){
-        return "CEDULA: " + cedula + " NOMBRE: " + nombre;
+        return "CEDULA: " + cedula + " NOMBRE: " + nombre + "\n";
     }
 }
