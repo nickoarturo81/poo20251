@@ -4,12 +4,10 @@ public class Producto {
 
     // Atributos
     private int numero;
-    private String referencia;
 
     // Constructor
-    public Producto(int numero, String referencia) {
+    public Producto(int numero) {
         this.numero = numero;
-        this.referencia = referencia;
     }
 
     // Métodos
@@ -17,11 +15,7 @@ public class Producto {
         return numero;
     }
 
-    public String getReferencia() {
-        return referencia;
-    }
-
     public String toString() {
-        return ("{PRODUCTO: [NUMERO: ]" + numero + "[ REFERENCIA: ] " + referencia + "}");
+        return ("PRODUCTO: NUMERO: " + numero);
     }
 }

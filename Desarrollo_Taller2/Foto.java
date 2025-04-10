@@ -18,6 +18,6 @@ public class Foto {
     }
 
     public String toString(){
-        return "{FOTO: [FICHERO: ]" + fichero + "}";
+        return "FOTO: FICHERO: " + fichero;
     }
 }
