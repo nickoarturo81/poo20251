@@ -29,4 +29,8 @@ public class Pedido {
     public int getnumeroTarjetaCredito(){
         return numeroTarjetaCredito;
     }
+
+    public String toString(){
+        return "{PEDIDO: [CLIENTE:]" + cliente + "[ PRODUCTO: ]" + producto + "[ FECHA: ]"+ fecha + "[ NUM_TARJETA_CREDITO: ]" + numeroTarjetaCredito +"}";
+    }
 }

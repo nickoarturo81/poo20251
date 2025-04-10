@@ -16,4 +16,8 @@ public class Foto {
     public String getFichero(){
         return fichero;
     }
+
+    public String toString(){
+        return "{FOTO: [FICHERO: ]" + fichero + "}";
+    }
 }

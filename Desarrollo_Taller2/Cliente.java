@@ -17,5 +17,8 @@ public class Cliente {
     public String getNombre(){
         return nombre;
     }
-
+    
+    public String toString(){
+        return "{CLIENTE [CEDULA: ]" + cedula + "[ NOMBRE: ] " + nombre + "}";
+    }
 }

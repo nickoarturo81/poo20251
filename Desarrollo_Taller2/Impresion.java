@@ -1,5 +1,7 @@
 package Desarrollo_Taller2;
 
+import java.util.Arrays;
+
 public class Impresion extends Producto { // --> extends = hereda 
 
     //Atributo
@@ -19,5 +21,9 @@ public class Impresion extends Producto { // --> extends = hereda
     }
     public Foto[] getFoto(){
         return foto;
+    }
+
+    public String toString(){
+        return "{IMPRESION: [COLOR: ]"+ color +"[ FOTO: ]" + " " + Arrays.toString(foto)+ "}";
     }
 }
