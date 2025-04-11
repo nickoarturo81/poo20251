@@ -50,7 +50,8 @@ public class EjecutarTaller2 {
         Camara objCamara3 = new Camara("Canon", "EOS R6", 3);
 
         //Impresion
-        System.out.println("***********************************");
+        /*
+         * System.out.println("***********************************");
         System.out.println("FACTURA #1");
         System.out.println(objPedido1);
         System.out.println(objImpresion1);
@@ -70,6 +71,102 @@ public class EjecutarTaller2 {
         System.out.println(objImpresion3);
         System.out.println(objCamara3);
         System.out.println("***********************************");
+         */
+        
+         Scanner leer = new Scanner(System.in);
+        int opc;
+        do {
+
+            System.out.print("*** MENU PRINCIPAL ***");
+            System.out.println();
+            System.out.print("1. Servicio de Impresión");
+            System.out.println();
+            System.out.print("2. Servicio Compra de Cámara");
+            System.out.println();
+            System.out.print("3. Salir");
+            System.out.println();
+            
+            opc = leer.nextInt();
+            switch (opc) {
+                case 1:
+                    System.out.print("SERVICIO DE IMPRESION");
+                    System.out.println();
+                    System.out.println("Selecciona la opción");
+                    System.out.println("1. Impresión de Foto Cliente1 ");
+                    System.out.println("2. Impresión de Foto Cliente2 ");
+                    System.out.println("3. Impresión de Foto Cliente3 ");
+                    System.out.println("4. Salir ");
+                    leer.nextLine();
+                    int opcImpresion = leer.nextInt();
+                    switch (opcImpresion) {
+                        case 1:
+                            System.out.println();
+                            System.out.println("PEDIDO");
+                            System.out.println(objImpresion1);
+                            System.out.println(objPedido1);
+                            System.out.println();
+                        break;
+                        case 2:
+                            System.out.println();
+                            System.out.println("PEDIDO");
+                            System.out.println(objImpresion2);
+                            System.out.println(objPedido2);
+                            System.out.println();
+                        break;
+                        case 3:
+                            System.out.println();
+                            System.out.println("PEDIDO");
+                            System.out.println(objImpresion3);
+                            System.out.println(objPedido3);
+                            System.out.println();
+                        break;
+                        case 4:
+                        System.out.println("Saliendo del sistema");
+                        break;
+                    }
+                break;
+                case 2:
+                    System.out.print("SERVICIO DE CAMARA");
+                    System.out.println();
+                    System.out.println("Selecciona la opción");
+                    System.out.println("1. Datos Cámara de Cliente1 ");
+                    System.out.println("2. Datos Cámara de Cliente2 ");
+                    System.out.println("3. Datos Cámara de Cliente3 ");
+                    System.out.println("4. Salir ");
+                    leer.nextLine();
+                    int opcCamara = leer.nextInt();
+                    switch (opcCamara) {
+                        case 1:
+                            System.out.println();
+                            System.out.println("PEDIDO");
+                            System.out.println(objCamara1);
+                            System.out.println(objPedido1);
+                            System.out.println();
+                        break;
+                        case 2:
+                            System.out.println();
+                            System.out.println("PEDIDO");
+                            System.out.println(objCamara2);
+                            System.out.println(objPedido2);
+                            System.out.println();
+                        break;
+                        case 3:
+                            System.out.println();
+                            System.out.println("PEDIDO");
+                            System.out.println(objCamara3);
+                            System.out.println(objPedido3);
+                            System.out.println();
+                        break;
+                        case 4:
+                        System.out.println("Saliendo del sistema");
+                        break;
+                    }    
+                break;
+                case 4:
+                System.out.println("Saliendo del sistema");
+                break;
+            }
+        } while (opc != 3);
     }
     
 }
