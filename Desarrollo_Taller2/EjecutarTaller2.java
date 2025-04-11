@@ -20,13 +20,8 @@ public class EjecutarTaller2 {
 
         //Producto
         Producto[] p = new Producto[2];
-        p[0] = new Impresion(null, f1, 0);
-        p[1] = new Camara(null, null, 0);
-
-        //ObjetosImpresion
-        Impresion objImpresion1 = new Impresion(" BLANCO/NEGRO ", f1, 1);
-        Impresion objImpresion2 = new Impresion(" RGB ", f1, 2);
-
+        p[0] = new Impresion("A color", f1, 0);
+        p[1] = new Camara("Sony", "Alpha APS", 0);
 
         //ObjetosPedidos:
         Date fechaActual = new Date();
@@ -69,14 +64,12 @@ public class EjecutarTaller2 {
                         case 1:
                             System.out.println();
                             System.out.println("PEDIDO");
-                            System.out.println(objImpresion1);
                             System.out.println(objPedido1);
                             System.out.println();
                         break;
                         case 2:
                             System.out.println();
                             System.out.println("PEDIDO");
-                            System.out.println(objImpresion2);
                             System.out.println(objPedido2);
                             System.out.println();
                         break;
