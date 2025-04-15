@@ -7,34 +7,18 @@ public class EjecutarTaller2 {
         
         //Creación de los objetos:
 
-        //Foto
-        Foto[] f1 = new Foto[3];
-        f1[0] = new Foto("Foto1.jpg");
-        f1[1] = new Foto("Foto2.jpg");
-        f1[2] = new Foto("Foto3.png");
+        //ObjetosFoto
+        Foto[] f = new Foto[3];
+        f[0] = new Foto(".jpg");
+        f[1] = new Foto(".png");
+        f[2] = new Foto(".gif");
     
-        //ObjetosClientes:
-        Cliente objCliente1 = new Cliente(" 1107093536 ", " Andres Caicedo ");
-        Cliente objCliente2 = new Cliente(" 1425793258 ", " Carlos Gaviria ");
-        Cliente objCliente3 = new Cliente(" 1154639878 ", " Alejandro Garcia ");
-
-        //Producto
+        //ObjetosProducto
         Producto[] p = new Producto[2];
-        p[0] = new Impresion("A color", f1, 0);
-        p[1] = new Camara("Sony", "Alpha APS", 0);
-
-        //ObjetosPedidos:
-        Date fechaActual = new Date();
-        Pedido objPedido1 = new Pedido(objCliente1, p, fechaActual, 623417546);
-        Pedido objPedido2 = new Pedido(objCliente2, p, fechaActual, 754215639);
-        Pedido objPedido3 = new Pedido(objCliente3, p, fechaActual, 754215639);
-
-        //ObjetosCamara
-        Camara objCamara1 = new Camara("Sony", "Alpha APS", 1);
-        Camara objCamara2 = new Camara("Nikon", "COOLPIX", 2);
-        Camara objCamara3 = new Camara("Canon", "EOS R6", 3);
-
-               
+        p[0] = new Impresion(null, f, 0);
+        p[1] = new Camara(null, null, 0, 0);
+    
+                             
         Scanner leer = new Scanner(System.in);
         int opc;
         do {
@@ -47,85 +31,116 @@ public class EjecutarTaller2 {
             System.out.println();
             System.out.print("3. Salir");
             System.out.println();
-            
             opc = leer.nextInt();
+
             switch (opc) {
                 case 1:
-                    System.out.print("SERVICIO DE IMPRESION");
+                    System.out.println("Servicio de Impresión");
                     System.out.println();
-                    System.out.println("Selecciona la opción");
-                    System.out.println("1. Impresión de Foto Cliente1 ");
-                    System.out.println("2. Impresión de Foto Cliente2 ");
-                    System.out.println("3. Impresión de Foto Cliente3 ");
-                    System.out.println("4. Salir ");
+                    Cliente objCliente1 = Cliente.digCliente();
+                    System.out.println();
+                    System.out.println("Cliente registrado exitosamente");
+                    System.out.println();
+                    System.out.println("Seleccione el formato que desea imprimir la foto");
+
+                    //Mostrar las tres opciones a elegir
+                    for (int i = 0; i < f.length; i++) {
+                        System.out.println((i + 1) + ". " + f[i].getFichero());
+                    }
+                    System.out.print("Opción: ");
+
+                    //Guardar la opción elegedia
+                    int formatoSeleccionado = leer.nextInt();
                     leer.nextLine();
-                    int opcImpresion = leer.nextInt();
-                    switch (opcImpresion) {
-                        case 1:
-                            System.out.println();
-                            System.out.println("PEDIDO");
-                            System.out.println(objPedido1);
-                            System.out.println();
-                        break;
-                        case 2:
-                            System.out.println();
-                            System.out.println("PEDIDO");
-                            System.out.println(objPedido2);
-                            System.out.println();
-                        break;
-                        case 3:
-                            System.out.println();
-                            System.out.println("PEDIDO");
-                            
-                            System.out.println(objPedido3);
-                            System.out.println();
-                        break;
-                        case 4:
-                        System.out.println("Saliendo del sistema");
-                        break;
+
+                    // Validar que las opciones esten en el rango
+                    if (formatoSeleccionado >= 1 && formatoSeleccionado <= 3) {
+                    Foto foto = f[formatoSeleccionado - 1]; // <-- Se pone -1 ya que los arreglos empiezan en 0 y el cliente coloca 1 en adelante.
+                    System.out.println("\nFormato seleccionado: " + foto.getFichero()); //Mostrar el formato elegido
+                    Foto[] fotoImprimir = { foto }; //Almacena el tipo de foto que se ha seleccionado
+                    Impresion producto = new Impresion("A color", fotoImprimir, formatoSeleccionado);
+
+                    // Solicitar número de tarjeta
+                    System.out.print("Ingrese el número de tarjeta de crédito: ");
+                    String tarjeta = leer.nextLine();
+                    leer.nextLine();
+
+                    // Crear el pedido
+                    Producto[] productos = {producto};
+                    Date fecha = new Date();
+                    Pedido pedido = new Pedido(objCliente1, productos, fecha, tarjeta);
+
+                    // Mostrar el pedido creado
+                    System.out.println("\nPedido creado exitosamente:");
+                    System.out.println(pedido.toString());
+                    System.out.println();
+
+                    //Si no estan en el rango sale error.
+                    } else {
+                    System.out.println("Opción inválida.");
                     }
                 break;
                 case 2:
-                    System.out.print("SERVICIO DE CAMARA");
+                    System.out.println("Servicio de Compra Cámaras");
                     System.out.println();
-                    System.out.println("Selecciona la opción");
-                    System.out.println("1. Datos Cámara de Cliente1 ");
-                    System.out.println("2. Datos Cámara de Cliente2 ");
-                    System.out.println("3. Datos Cámara de Cliente3 ");
-                    System.out.println("4. Salir ");
-                    leer.nextLine();
+                    Cliente objCliente2 = Cliente.digCliente();
+                    System.out.println();
+                    System.out.println("Cliente registrado exitosamente");
+                    System.out.println();
+                    System.out.println("Seleccione la cámara que desea comprar:");
+                    System.out.println("1. Sony Alpha APS - $380.000");
+                    System.out.println("2. Nikon COOLPIX - $390.500");
+                    System.out.println("3. Canon EOS R6 - $880.500");
+
+                    System.out.print("\nOpción: ");
                     int opcCamara = leer.nextInt();
+                    leer.nextLine(); // Limpiar buffer
+
+                    Camara camara = null;
                     switch (opcCamara) {
                         case 1:
-                            System.out.println();
-                            System.out.println("PEDIDO");
-                            System.out.println(objCamara1);
-                            System.out.println(objPedido1);
-                            System.out.println();
+                            camara = new Camara("Sony", "Alpha APS", 1, 380000);
                         break;
                         case 2:
-                            System.out.println();
-                            System.out.println("PEDIDO");
-                            System.out.println(objCamara2);
-                            System.out.println(objPedido2);
-                            System.out.println();
+                            camara = new Camara("Nikon", "COOLPIX", 2, 390500);
                         break;
                         case 3:
-                            System.out.println();
-                            System.out.println("PEDIDO");
-                            System.out.println(objCamara3);
-                            System.out.println(objPedido3);
-                            System.out.println();
+                            camara = new Camara("Canon", "EOS R6", 3, 880500);
                         break;
-                        case 4:
-                        System.out.println("Saliendo del sistema");
+                        default:
+                        System.out.println("Debe seleccionar una de las tres opciones");
                         break;
-                    }    
+                    }
+
+                if (camara != null) {
+                    System.out.print("¿Cuántas unidades desea comprar? ");
+                    int cantidad = leer.nextInt();
+                    leer.nextLine();
+
+                    long totalPagar = camara.getPrecio() * cantidad;
+
+                    System.out.print("Ingrese el número de tarjeta de crédito: ");
+                    String tarjeta = leer.nextLine();
+
+                    Producto[] productos = new Producto[1];
+                    productos[0] = camara;
+
+                    Date fecha = new Date();
+                    Pedido pedido = new Pedido(objCliente2, productos, fecha, tarjeta);
+
+                    System.out.println("\nPedido creado exitosamente:");
+                    System.out.println(pedido.toString());
+                    System.out.println("CANTIDAD: " + cantidad);
+                    System.out.println("TOTAL A PAGAR: $" + totalPagar);
+                    System.out.println();
+                }   
+
                 break;
-                case 4:
-                System.out.println("Saliendo del sistema");
+                default:
+                System.out.println("Debe seleccionar una de las tres opciones.");
                 break;
             }
+            
         } while (opc != 3);
     }
     

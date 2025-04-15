@@ -6,10 +6,10 @@ public class Pedido {
     private Cliente cliente;
     private Producto[] producto;
     private Date fecha;
-    private int numeroTarjetaCredito;
+    private String numeroTarjetaCredito;
 
     //Constructor
-    public Pedido(Cliente cliente, Producto[] producto, Date fecha, int numeroTarjetaCredito){
+    public Pedido(Cliente cliente, Producto[] producto, Date fecha, String numeroTarjetaCredito){
         this.cliente = cliente;
         this.producto = producto;
         this.fecha = fecha;
@@ -26,7 +26,7 @@ public class Pedido {
     public Date getFecha(){
         return fecha;
     }
-    public int getnumeroTarjetaCredito(){
+    public String getnumeroTarjetaCredito(){
         return numeroTarjetaCredito;
     }
 
