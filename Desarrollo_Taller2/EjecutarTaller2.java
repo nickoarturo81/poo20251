@@ -8,18 +8,18 @@ public class EjecutarTaller2 {
         //Creación de los objetos:
 
         //ObjetosFoto
-        Foto[] f = new Foto[3];
+        Foto[] f = new Foto[3]; //Arreglo foto y tres objetos.
         f[0] = new Foto(".jpg");
         f[1] = new Foto(".png");
         f[2] = new Foto(".gif");
     
         //ObjetosProducto
-        Producto[] p = new Producto[2];
+        Producto[] p = new Producto[2]; //Areglo producto y dos objetos
         p[0] = new Impresion(null, f, 0);
         p[1] = new Camara(null, null, 0, 0);
     
                              
-        Scanner leer = new Scanner(System.in);
+        Scanner leer = new Scanner(System.in); // Se declara un escaner para leer lo que digite el usuario
         int opc;
         do {
 
@@ -31,75 +31,75 @@ public class EjecutarTaller2 {
             System.out.println();
             System.out.print("3. Salir");
             System.out.println();
-            opc = leer.nextInt();
+            opc = leer.nextInt(); //Variable donde se almacena el valor que digito el usuario (entre 1 y 3).
 
             switch (opc) {
                 case 1:
                     System.out.println("Servicio de Impresión");
                     System.out.println();
-                    Cliente objCliente1 = Cliente.digCliente();
+                    Cliente objCliente1 = Cliente.digCliente();//Llama al método digCliente para registrar un nuevo cliente.
                     System.out.println();
                     System.out.println("Cliente registrado exitosamente");
                     System.out.println();
                     System.out.println("Seleccione el formato que desea imprimir la foto");
 
-                    //Mostrar las tres opciones a elegir
+                    //Muestra las 3 opciones disponibles para imprimir fotos (JPG, PNG, GIF)
                     for (int i = 0; i < f.length; i++) {
-                        System.out.println((i + 1) + ". " + f[i].getFichero());
-                    }
+                        System.out.println((i + 1) + ". " + f[i].getFichero()); 
+                    } //Imprime  las tres opciones de los formatos de foto disponibles en el menú para el usuario,
                     System.out.print("Opción: ");
 
-                    //Guardar la opción elegedia
-                    int formatoSeleccionado = leer.nextInt();
+                    //Guardar la opción elegida
+                    int formatoSeleccionado = leer.nextInt(); //Guarda en la variable formatoSeleccionado el valor que digito el usuario.
                     leer.nextLine();
 
-                    // Validar que las opciones esten en el rango
+                    // Validar que la opción esté en el rango válido (entre 1 y 3)
                     if (formatoSeleccionado >= 1 && formatoSeleccionado <= 3) {
-                    Foto foto = f[formatoSeleccionado - 1]; // <-- Se pone -1 ya que los arreglos empiezan en 0 y el cliente coloca 1 en adelante.
-                    System.out.println("\nFormato seleccionado: " + foto.getFichero()); //Mostrar el formato elegido
-                    Foto[] fotoImprimir = { foto }; //Almacena el tipo de foto que se ha seleccionado
-                    Impresion producto = new Impresion("A color", fotoImprimir, formatoSeleccionado);
+                        Foto foto = f[formatoSeleccionado - 1]; //Se pone -1 ya que los arreglos empiezan en 0 y el cliente coloca 1 en adelante.
+                        System.out.println("\nFormato seleccionado: " + foto.getFichero()); //Muestra el formato seleccionado
+                        Foto[] fotoImprimir = { foto }; // Crea un arreglo con la foto seleccionada para enviarla al producto
+                        Impresion producto = new Impresion("A color", fotoImprimir, formatoSeleccionado); // Crea un objeto de tipo Impresion con los datos: tipo, fotos, y opción seleccionada
 
-                    // Solicitar número de tarjeta
-                    System.out.print("Ingrese el número de tarjeta de crédito: ");
-                    String tarjeta = leer.nextLine();
-                    leer.nextLine();
+                        // Solicitar número de tarjeta
+                        System.out.print("Ingrese el número de tarjeta de crédito: ");
+                        String tarjeta = leer.nextLine();
+                        leer.nextLine();
 
-                    // Crear el pedido
-                    Producto[] productos = {producto};
-                    Date fecha = new Date();
-                    Pedido pedido = new Pedido(objCliente1, productos, fecha, tarjeta);
+                        // Crear el pedido
+                        Producto[] productos = {producto}; //Crea un arreglo de productos para pasarlo al pedido
+                        Date fecha = new Date(); //Se obtiene la fecha y hora actual del sistema
+                        Pedido pedido = new Pedido(objCliente1, productos, fecha, tarjeta); //Se crea un nuevo objeto Pedido con los datos del cliente, los productos, la fecha y la tarjeta
 
-                    // Mostrar el pedido creado
-                    System.out.println("\nPedido creado exitosamente:");
-                    System.out.println(pedido.toString());
-                    System.out.println();
+                        // Mostrar el pedido creado
+                        System.out.println("\nPedido creado exitosamente:"); //Imprime un mensaje indicando que el pedido fue creado con éxito
+                        System.out.println(pedido.toString()); //Imprime la información detallada del pedido usando el método toString() del objeto pedido
+                        System.out.println();
 
-                    //Si no estan en el rango sale error.
+                    //Si no estan en el rango (entre 1 y 3) sale error.
                     } else {
-                    System.out.println("Opción inválida.");
+                        System.out.println("Opción inválida.");
                     }
                 break;
                 case 2:
                     System.out.println("Servicio de Compra Cámaras");
                     System.out.println();
-                    Cliente objCliente2 = Cliente.digCliente();
+                    Cliente objCliente2 = Cliente.digCliente(); //Llama al método digCliente para registrar un nuevo cliente.
                     System.out.println();
-                    System.out.println("Cliente registrado exitosamente");
+                    System.out.println("Cliente registrado exitosamente"); //Confirma que el cliente se registro
                     System.out.println();
-                    System.out.println("Seleccione la cámara que desea comprar:");
+                    System.out.println("Seleccione la cámara que desea comprar:"); //Aparece un menú (entre 1 y 3)
                     System.out.println("1. Sony Alpha APS - $380.000");
                     System.out.println("2. Nikon COOLPIX - $390.500");
                     System.out.println("3. Canon EOS R6 - $880.500");
 
-                    System.out.print("\nOpción: ");
-                    int opcCamara = leer.nextInt();
+                    System.out.print("\nOpción: ");//Para digitar la opción a elegir.
+                    int opcCamara = leer.nextInt(); //Guarda el valor en la variable opcCamara
                     leer.nextLine(); // Limpiar buffer
 
-                    Camara camara = null;
-                    switch (opcCamara) {
+                    Camara camara = null; // Se declara una variable de tipo Camara y se inicializa como null(vacío)
+                    switch (opcCamara) { //Se evalúa el valor digitado por el usuario (opcCamara - entre 1 y 3)
                         case 1:
-                            camara = new Camara("Sony", "Alpha APS", 1, 380000);
+                            camara = new Camara("Sony", "Alpha APS", 1, 380000); // Se crea un objeto Camara con marca, modelo, código y precio
                         break;
                         case 2:
                             camara = new Camara("Nikon", "COOLPIX", 2, 390500);
@@ -108,30 +108,30 @@ public class EjecutarTaller2 {
                             camara = new Camara("Canon", "EOS R6", 3, 880500);
                         break;
                         default:
-                        System.out.println("Debe seleccionar una de las tres opciones");
+                        System.out.println("Debe seleccionar una de las tres opciones"); //En caso de digitar 
                         break;
                     }
 
-                if (camara != null) {
+                if (camara != null) { //Si cámara es distinto a null es decir que tiene un valor (entre 1 y 3)
                     System.out.print("¿Cuántas unidades desea comprar? ");
-                    int cantidad = leer.nextInt();
+                    int cantidad = leer.nextInt();//Guarda en la variable cantidad el valor que registro el usuario.
                     leer.nextLine();
 
-                    long totalPagar = camara.getPrecio() * cantidad;
+                    long totalPagar = camara.getPrecio() * cantidad; //Calcula el total a pagar multiplicando el precio por la cantidad
 
                     System.out.print("Ingrese el número de tarjeta de crédito: ");
                     String tarjeta = leer.nextLine();
 
-                    Producto[] productos = new Producto[1];
-                    productos[0] = camara;
+                    Producto[] productos = new Producto[1]; // Crea un arreglo de productos con tamaño 1
+                    productos[0] = camara; //Almacena el objeto camara en la primera posición del arreglo
 
                     Date fecha = new Date();
                     Pedido pedido = new Pedido(objCliente2, productos, fecha, tarjeta);
 
                     System.out.println("\nPedido creado exitosamente:");
-                    System.out.println(pedido.toString());
-                    System.out.println("CANTIDAD: " + cantidad);
-                    System.out.println("TOTAL A PAGAR: $" + totalPagar);
+                    System.out.println(pedido.toString()); //Muestra la información del pedido usando su método toString()
+                    System.out.println("CANTIDAD: " + cantidad); //Muestra la cantidad registrada.
+                    System.out.println("TOTAL A PAGAR: $" + totalPagar); //Muestra el total que debe pagar el cliente
                     System.out.println();
                 }   
 
