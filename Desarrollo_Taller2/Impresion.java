@@ -6,13 +6,15 @@ public class Impresion extends Producto { // --> extends = hereda
 
     //Atributo
     private String color;
-    private Foto[] foto; // --> Arreglo de fotos
+    private Foto[] foto; // --> Arreglo de 
+    private long precio;
 
     //Construtor
-    public Impresion(String color,Foto[] foto, int numero){
-        super(numero); // --> Atributo de la clase padre Producto
+    public Impresion(String color, Foto[] foto, int numero, long precio){
+        super(numero, precio); // Llama al constructor de la clase Producto con número y precio
         this.color = color;
         this.foto = foto;
+        this.precio = precio; // Ahora sí asigna el precio correctamente
     }
 
     //Metodos
@@ -23,7 +25,11 @@ public class Impresion extends Producto { // --> extends = hereda
         return foto;
     }
 
+    public long getPrecio() {
+        return precio;
+    }
+
     public String toString(){
-        return "[IMPRESION]\nID:" + super.getNumero() + " COLOR:" + color + " " + Arrays.toString(foto);
+        return "[IMPRESION]\nID:" + super.getNumero() + " COLOR:" + color + " " + " PRECIO " + precio + Arrays.toString(foto);
     }
 }

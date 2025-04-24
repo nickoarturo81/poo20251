@@ -20,4 +20,6 @@ public class Foto {
     public String toString(){
         return "FICHERO: " + fichero;
     }
+
+    
 }

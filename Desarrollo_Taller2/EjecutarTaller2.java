@@ -15,7 +15,7 @@ public class EjecutarTaller2 {
     
         //ObjetosProducto
         Producto[] p = new Producto[2]; //Areglo producto y dos objetos
-        p[0] = new Impresion(null, f, 0);
+        p[0] = new Impresion(null, f, 0, 0);
         p[1] = new Camara(null, null, 0, 0);
     
                              
@@ -55,24 +55,55 @@ public class EjecutarTaller2 {
 
                     // Validar que la opción esté en el rango válido (entre 1 y 3)
                     if (formatoSeleccionado >= 1 && formatoSeleccionado <= 3) {
-                        Foto foto = f[formatoSeleccionado - 1]; //Se pone -1 ya que los arreglos empiezan en 0 y el cliente coloca 1 en adelante.
-                        System.out.println("\nFormato seleccionado: " + foto.getFichero()); //Muestra el formato seleccionado
-                        Foto[] fotoImprimir = { foto }; // Crea un arreglo con la foto seleccionada para enviarla al producto
-                        Impresion producto = new Impresion("A color", fotoImprimir, formatoSeleccionado); // Crea un objeto de tipo Impresion con los datos: tipo, fotos, y opción seleccionada
+                        Foto foto = f[formatoSeleccionado - 1];
+                        System.out.println("\nFormato seleccionado: " + foto.getFichero());
+                        Foto[] fotoImprimir = { foto };
+                    
+                        // Preguntar el tipo de impresión (color o blanco y negro)
+                        System.out.println("Seleccione el tipo de impresión:");
+                        System.out.println("1. A color (Valor: $1.500)");
+                        System.out.println("2. Blanco y negro (Valor: $800)");
+                        System.out.print("Opción: ");
+                        int tipoColor = leer.nextInt();
+                        leer.nextLine();
+                    
+                        String tipoImpresion;
+                        long precio;
+                    
+                        if (tipoColor == 1) {
+                            tipoImpresion = "A color";
+                            precio = 1500;
+                        } else if (tipoColor == 2) {
+                            tipoImpresion = "Blanco y negro";
+                            precio = 800;
+                        } else {
+                            System.out.println("Opción inválida. Se asignará A color por defecto.");
+                            tipoImpresion = "A color";
+                            precio = 1500;
+                        }
 
-                        // Solicitar número de tarjeta
-                        System.out.print("Ingrese el número de tarjeta de crédito: ");
-                        String tarjeta = leer.nextLine();
+                        // Preguntar cuántas unidades desea imprimir
+                        System.out.print("¿Cuántas unidades desea imprimir? ");
+                        int cantidad = leer.nextInt();
                         leer.nextLine();
 
-                        // Crear el pedido
-                        Producto[] productos = {producto}; //Crea un arreglo de productos para pasarlo al pedido
-                        Date fecha = new Date(); //Se obtiene la fecha y hora actual del sistema
-                        Pedido pedido = new Pedido(objCliente1, productos, fecha, tarjeta); //Se crea un nuevo objeto Pedido con los datos del cliente, los productos, la fecha y la tarjeta
+                        // Crear el objeto Impresion con el tipo de impresión y precio correctos
+                        Impresion producto = new Impresion(tipoImpresion, fotoImprimir, formatoSeleccionado, precio);
 
-                        // Mostrar el pedido creado
-                        System.out.println("\nPedido creado exitosamente:"); //Imprime un mensaje indicando que el pedido fue creado con éxito
-                        System.out.println(pedido.toString()); //Imprime la información detallada del pedido usando el método toString() del objeto pedido
+                        // Calcular el total
+                        long totalPagar = precio * cantidad;
+
+                        System.out.print("Ingrese el número de tarjeta de crédito: ");
+                        String tarjeta = leer.nextLine();
+
+                        Producto[] productos = { producto };
+                        Date fecha = new Date();
+                        Pedido pedido = new Pedido(objCliente1, productos, fecha, tarjeta);
+
+                        System.out.println("\nPedido creado exitosamente:");
+                        System.out.println(pedido.toString());
+                        System.out.println("CANTIDAD: " + cantidad);
+                        System.out.println("TOTAL A PAGAR: $" + totalPagar);
                         System.out.println();
 
                     //Si no estan en el rango (entre 1 y 3) sale error.
