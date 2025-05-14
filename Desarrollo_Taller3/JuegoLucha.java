@@ -37,9 +37,7 @@ public class JuegoLucha {
         atacante.atacar(defensor);
         System.out.println(defensor.getNombre() + " ahora tiene " + defensor.getPuntosDeVida() + " puntos de vida ");
 
-    }
-
-    
+    }    
     
 }
 
