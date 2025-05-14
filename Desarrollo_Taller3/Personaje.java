@@ -1,7 +1,6 @@
 package Desarrollo_Taller3;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class Personaje {
     
@@ -27,17 +26,17 @@ public class Personaje {
     } // < -- Verifica si el personaje está vivo
 
     public void recibirDano (int dano){
-        this.puntosDeVida = dano;
+        this.puntosDeVida -= dano;
         if (this.puntosDeVida < 0){
-            this.puntosDeVida -= 0; // <-- No se puede tener menos de 0 HP
+            this.puntosDeVida = 0; // <-- No se puede tener menos de 0 HP
         }
     } // < -- Recibir Daño
 
     public void atacar(Personaje oponente){
         Random rand = new Random();
-        int dano = rand.nextInt (( MAX_DANO - MIN_DANO ) + 1) + MIN_DANO ;
+        int dano = rand.nextInt((MAX_DANO - MIN_DANO) + 1) + MIN_DANO;
         oponente.recibirDano ( dano ) ;
-        System.out.println( this.nombre + " ataca a " + oponente.getNombre() + " causando " + dano + " puntos de daño .") ;
+        System.out.println( this.nombre + " ataca a " + oponente.getNombre() + " causando " + dano + " puntos de daño") ;
     } // <-- Realizar un ataque al oponente
 
     public int getPuntosDeVida(){
