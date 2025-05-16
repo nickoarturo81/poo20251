@@ -5,6 +5,7 @@ public class JuegoLucha {
     //Atributos
     private Personaje jugador1;
     private Personaje jugador2;
+    private Personaje nombre;
 
     //Constructor
     public JuegoLucha(String nombre1, String nombre2) {

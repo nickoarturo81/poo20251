@@ -12,8 +12,6 @@ public static void main ( String [] args ) {
         new Personaje("Scorpion"),
         new Personaje("Sub-Zero"),
         new Personaje("Liu Kang"),
-        new Personaje("Sonia Blade"),
-        new Personaje("Kitana"),
     };
 
     System.out.println("Selecciona el personaje");
@@ -22,18 +20,18 @@ public static void main ( String [] args ) {
     }
 
     //Elegir personaje #1
-    System.out.print("Jugador 1, elige tu luchador (1 - " + personajesDispo.length + " )");
+    System.out.print("Jugador 1: Elige tu luchador, seleccione un número de (1 - " + personajesDispo.length + " )");
     int eleccion1 = scanner.nextInt() -1;
 
-    while (eleccion1 < 0 || eleccion1 >= personajesDispo.length) {
+    while (eleccion1 < 0 && eleccion1 >= personajesDispo.length) {
         System.out.print("Elección inválida. Intenta de nuevo: ");
         eleccion1 = scanner.nextInt() - 1;
     }
     //Elegir personaje #2
-    System.out.print("Jugador 2, elige tu luchador (1 - " + personajesDispo.length + " )");
+    System.out.print("Jugador 2: Elige tu luchador, seleccione un número de (1 - " + personajesDispo.length + " )");
     int eleccion2 = scanner.nextInt() - 1;
 
-    while (eleccion2 < 0 || eleccion2 >= personajesDispo.length || eleccion2 == eleccion1) {
+    while (eleccion2 < 0 && eleccion2 >= personajesDispo.length && eleccion2 == eleccion1) {
         System.out.print("Elección inválida o luchador ya elegido. Intenta de nuevo: ");
         eleccion2 = scanner.nextInt() - 1;
     }
