@@ -7,8 +7,7 @@ public class SubZero extends Personaje{
     
     //Constructor
     public SubZero(String nombre){
-        super(nombre);
-        this.nombre = nombre;
+        super(nombre); // <-- Llama al construtor nombre heredado de la clase Personaje y le asigna un nombre
     }
     
 }

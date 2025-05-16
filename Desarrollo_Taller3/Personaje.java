@@ -5,7 +5,7 @@ import java.util.Random;
 public class Personaje {
     
     //Atributos:
-    private String nombre;
+    protected String nombre;
     private int puntosDeVida;
     private final int MAX_DANO = 30;
     private final int MIN_DANO = 10;
