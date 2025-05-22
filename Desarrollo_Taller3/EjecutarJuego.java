@@ -29,11 +29,13 @@ public class EjecutarJuego {
         // Elegir personaje #2
         System.out.print("Jugador 2: Elige tu luchador, seleccione un número de (1 - " + personajesDispo.length + " )");
         int eleccion2 = scanner.nextInt() - 1;
-
+        
+        //Validar si el usuario ha digitado un numero distinto al rango del 1 a 3 o si selecciona nuevamente un luchador ya elegido
         while (eleccion2 < 0 || eleccion2 >= personajesDispo.length || eleccion2 == eleccion1) {
             System.out.print("Elección inválida o luchador ya elegido. Intenta de nuevo: ");
             eleccion2 = scanner.nextInt() - 1;
         }
+        
         // Crear juego con los personajes seleccionados
         Personaje jugador1 = personajesDispo[eleccion1];
         Personaje jugador2 = personajesDispo[eleccion2];
