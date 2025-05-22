@@ -8,5 +8,5 @@ public class SubZero extends Personaje{
         this.nomAtaque = new String[] { "Congelar", "Clon de Hielo", "Martillo de Escarcha" };
         this.danoAtaque = new int[] { 8, 25, 25 };
     }
-    
+
 }
