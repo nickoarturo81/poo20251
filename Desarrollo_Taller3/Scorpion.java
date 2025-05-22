@@ -1,6 +1,5 @@
 package Desarrollo_Taller3;
 import java.util.Random;
-import java.util.Random;
 
 public class Scorpion extends Personaje {
 
@@ -21,7 +20,7 @@ public class Scorpion extends Personaje {
 
         // Mensaje especial si usa "Arpón"
         if (ataqueElegido.equals("Arpón")) {
-            System.out.println(this.nombre + ": GetOverHere!");
+            System.out.println(this.nombre + " ¡GetOverHere!");
         }
 
         oponente.recibirDano(dano);

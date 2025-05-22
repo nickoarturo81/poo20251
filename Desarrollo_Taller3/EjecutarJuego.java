@@ -30,7 +30,7 @@ public class EjecutarJuego {
         System.out.print("Jugador 2: Elige tu luchador, seleccione un número de (1 - " + personajesDispo.length + " )");
         int eleccion2 = scanner.nextInt() - 1;
 
-        while (eleccion2 < 0 || eleccion2 >= personajesDispo.length && eleccion2 == eleccion1) {
+        while (eleccion2 < 0 || eleccion2 >= personajesDispo.length || eleccion2 == eleccion1) {
             System.out.print("Elección inválida o luchador ya elegido. Intenta de nuevo: ");
             eleccion2 = scanner.nextInt() - 1;
         }
