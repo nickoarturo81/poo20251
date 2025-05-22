@@ -5,12 +5,10 @@ public class JuegoLucha {
     //Atributos
     private Personaje jugador1;
     private Personaje jugador2;
-    private Personaje nombre;
 
-    //Constructor
-    public JuegoLucha(String nombre1, String nombre2) {
-        this.jugador1 = new Personaje (nombre1);
-        this.jugador2 = new Personaje (nombre2);
+    public JuegoLucha(Personaje jugador1, Personaje jugador2) {
+        this.jugador1 = jugador1;
+        this.jugador2 = jugador2;
     }
 
     //Métodos
